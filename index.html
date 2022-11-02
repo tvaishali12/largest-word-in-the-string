@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Find the largest word in a string ?
+    // 1st way--------------Using function---------------------
+    const string = "my name is vaishali thakur";
+    function largestWord(str) {
+      let splitStr = str.split(" ");
+      let maximumlength = 0;
+      let emptyArr = "";
+      for (var i = 0; i < splitStr.length; i++) {
+        if (splitStr[i].length > maximumlength) {
+          maximumlength = splitStr[i].length;
+          emptyArr = splitStr[i];
+        }
+      }
+      console.log(emptyArr);
+      return maximumlength;
+    }
+    console.log(largestWord("my name is vaishali thakur"));
+
+    //2nd way-----------Direct iterate a loop------------------
+    let splitStr = string.split(" ");
+    let maximumlength = 0;
+    let emptyArr = "";
+    for (var i = 0; i < splitStr.length; i++) {
+      if (splitStr[i].length > maximumlength) {
+        maximumlength = splitStr[i].length;
+        emptyArr = splitStr[i];
+      }
+    }
+    console.log(emptyArr);
+    console.log(maximumlength);
+
+    //3rd way-------------------Using reduce()--------------------
+    const strings = "my name is vaishali thakur";
+    let split = strings.split(" ");
+    var longestWord = split.reduce(function (longest, currentWord) {
+      if (currentWord.length > longest.length) {
+        return currentWord;
+      } else {
+        return longest;
+      }
+    }, "");
+    console.log(longestWord);
+
+    //-------------------------------------------
+  </script>
+</html>
